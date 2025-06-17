@@ -1,45 +1,62 @@
 # House Price Prediction
 
-This repository contains a project focused on predicting house prices using data analysis and machine learning techniques. The project is implemented in Jupyter Notebook, making it easy to understand and modify for experimentation.
+This repository contains a Jupyter Notebook project for predicting house prices using exploratory data analysis, feature engineering, and machine learning regression models. The workflow is designed to guide you through a hands-on, end-to-end supervised learning project with structured code and visualizations.
 
-## Features
+## Project Overview
 
-- Data exploration and visualization
-- Feature engineering
-- Model training and evaluation
-- Prediction and result interpretation
+The notebook (`House_Price_Prediction.ipynb`) walks through the following steps:
 
-## Getting Started
+1. **Data Loading & Inspection**
+   - Loads house price data from `HousePricePrediction.xlsx`.
+   - Initial exploration: shows dataset head and shape.
+   - Separates and counts categorical and numerical features.
 
-### Prerequisites
+2. **Data Visualization**
+   - Correlation heatmap for numerical features.
+   - Unique value counts and distribution plots for categorical features.
+
+3. **Data Cleaning & Preparation**
+   - Drops the `Id` column as it is not informative.
+   - Handles missing values by imputing mean for `SalePrice` and dropping rows with other missing data.
+   - Verifies absence of missing values.
+
+4. **Feature Engineering**
+   - Identifies categorical columns.
+   - Applies one-hot encoding to convert categorical variables into numeric features.
+
+5. **Modeling & Evaluation**
+   - Splits the data into training and validation sets (80/20).
+   - Trains and evaluates three regression models:
+     - **Support Vector Regressor (SVR)**
+     - **Random Forest Regressor**
+     - **Linear Regression**
+   - Uses Mean Absolute Percentage Error (MAPE) to compare model performance.
+
+## Requirements
 
 - Python 3.x
 - Jupyter Notebook
-- Common data science libraries (such as pandas, numpy, matplotlib, scikit-learn)
+- pandas, numpy, matplotlib, seaborn, scikit-learn, openpyxl (for Excel support)
 
-You may need to install the required libraries using pip:
-
+Install the required libraries with:
 ```bash
-pip install pandas numpy matplotlib scikit-learn
+pip install pandas numpy matplotlib seaborn scikit-learn openpyxl
 ```
-
-### Running the Project
-
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/utkarsh884/House-Price-Prediction.git
-    cd House-Price-Prediction
-    ```
-2. Launch Jupyter Notebook:
-    ```bash
-    jupyter notebook
-    ```
-3. Open the notebook file and run the cells step by step.
 
 ## Usage
 
-- The notebooks include step-by-step instructions, code, and explanations.
-- You can modify the code to use your own datasets or test different models.
+1. Place `HousePricePrediction.xlsx` in the same directory as the notebook.
+2. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+3. Open `House_Price_Prediction.ipynb` and run all cells in sequence.
+
+## Results
+
+- The notebook reports MAPE for all three models so you can compare their performances.
+- All steps are explained with code comments and markdown cells for clarity.
+- The notebook is modular and easy to adapt for other regression problems or datasets.
 
 ## Contributing
 
